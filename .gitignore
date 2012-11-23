@@ -1,0 +1,4 @@
+*.class
+target/
+*.log
+src/main/resources/filelist.txt
