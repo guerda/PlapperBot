@@ -1,0 +1,5 @@
+Hallo, das ist ein Test, wie gut die Grammatik von meinem Plapperbot funktioniert.
+Der Plapperbot ist ein Programm, das an Hand von Worten diverse Sätze zusammenbaut.
+Die Sätze sollen möglichst die Grammatik beachten und keine kruden Konstrukte bilden.
+Die Applikation ist relativ sinnlos, macht aber Spaß.
+Der Test, ob die Applikation funktioniert, ist wichtig.

@@ -20,6 +20,8 @@ import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 
 import de.guerda.ApplicationException;
+import de.guerda.plapperbot.controller.PlapperBotController;
+import de.guerda.plapperbot.view.MainWindow;
 
 /**
  * @author philip
@@ -29,18 +31,32 @@ public class PlapperBot {
 
   // TODO wrapper class
   private HashMap<WordPair, List<String>> dictionary;
+  private Random random;
 
   public static void main(String[] args) {
-
     PlapperBot tmpPlapperBot = new PlapperBot();
-    Random tmpRandom = new Random();
-    tmpPlapperBot.initializeDictionary();
+    tmpPlapperBot.start();
+    // tmpPlapperBot.initializeDictionary();
 
     // Generate text
-    for (int i = 0; i <= 10; i++) {
-      String tmpText = tmpPlapperBot.generateChatLine(tmpPlapperBot, tmpRandom);
-      System.out.println(tmpText);
-    }
+    // for (int i = 0; i <= 10; i++) {
+    // String tmpText = tmpPlapperBot.generateChatLine(tmpPlapperBot,
+    // tmpRandom);
+    // System.out.println(tmpText);
+    // }
+  }
+
+  private void start() {
+    MainWindow tmpMainWindow = new MainWindow();
+    PlapperBotController tmpController = new PlapperBotController();
+    tmpController.setView(tmpMainWindow);
+    tmpMainWindow.setController(tmpController);
+    
+    tmpMainWindow.setVisible(true);
+  }
+
+  public PlapperBot() {
+    random = new Random();
   }
 
   /**
@@ -48,7 +64,7 @@ public class PlapperBot {
    * @param tmpRandom
    * @return
    */
-  public String generateChatLine(PlapperBot tmpPlapperBot, Random tmpRandom) {
+  public String generateChatLine(PlapperBot tmpPlapperBot) {
     StringBuffer tmpText = new StringBuffer();
     WordPair tmpStartWords = tmpPlapperBot.getRandomInitialWordPair();// new
                                                                       // WordPair("tach",
@@ -58,7 +74,7 @@ public class PlapperBot {
     List<String> tmpPossibleWords = null;
     while ((tmpPossibleWords = tmpPlapperBot.getPossibleWords(tmpStartWords)) != null) {
       int tmpLength = tmpPossibleWords.size();
-      int tmpIndex = tmpRandom.nextInt(tmpLength);
+      int tmpIndex = random.nextInt(tmpLength);
       String tmpNextWord = tmpPossibleWords.get(tmpIndex);
       tmpText.append(" " + tmpNextWord);
 
