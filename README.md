@@ -1,7 +1,7 @@
 PlapperBot
 ==========
 
-A Markov chain generator based on ICQ log files and other input files.
+A Markov chain generator based on ICQ log files and other input files. The name comes from the German word for chatting: Plappern.
 
 Instructions
 -
@@ -10,6 +10,14 @@ Instructions
 3. Execute Plapperbot.sh
 4. ???
 5. Profit!
+
+Installation
+-
+Statusy uses Maven. Please install Maven for your platform. Then you can start right away with the following commands:
+
+    mvn clean compile
+    mvn exec:java -Dexec.mainClass="de.guerda.plapperbot.PlapperBot"
+
 
 License
 -
