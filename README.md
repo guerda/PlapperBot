@@ -22,3 +22,7 @@ Statusy uses Maven. Please install Maven for your platform. Then you can start r
 License
 -
 The Plapperbot is licensed under GPL v3 or newer. The complete license can be found under LICENSE
+
+
+Build status on [Travis CI](https://travis-ci.org/):
+[![Build Status](https://travis-ci.org/guerda/PlapperBot.svg?branch=master)](https://travis-ci.org/guerda/PlapperBot)
