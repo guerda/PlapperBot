@@ -1,2 +1,2 @@
 language: java
-script: cd additional_libs && ./install_additional_libs.sh
+before_install: cd additional_libs && ./install_additional_libs.sh
